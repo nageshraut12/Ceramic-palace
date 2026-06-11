@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceramic Palace Decor — Premium Tiles & Multifunctional Sinks | Nagpur</title>
+  <meta name="description" content="Ceramic Palace Decor offers premium tiles, multifunctional sinks, sanitaryware, and interior decor solutions in Nagpur. Explore our Quartz Sinks, Tile Insert Drains, and expert plumbing services." />
+  <meta name="keywords" content="tiles Nagpur, multifunctional sink, quartz sink, tile insert drain, sanitaryware, bib cock, basin, interior decor, plumbing Nagpur" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#0A0A0F; --bg2:#111118; --bg3:#16161F;
+      --surface:rgba(255,255,255,0.04); --surface2:rgba(255,255,255,0.08);
+      --border:rgba(255,255,255,0.09);
+      --gold:#C9A84C; --gold2:#E8C97A; --gold-dim:rgba(201,168,76,0.14);
+      --purple:#7B5EA7; --purple2:#9B7FCC;
+      --text:#F0EEE8; --text2:rgba(240,238,232,0.6); --text3:rgba(240,238,232,0.35);
+      --shadow:0 8px 40px rgba(0,0,0,0.55);
+      --glow-gold:0 0 40px rgba(201,168,76,0.18);
+      --glow-purple:0 0 40px rgba(123,94,167,0.18);
+      --r:14px; --rl:22px; --tr:0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="light"] {
+      --bg:#F5F3EE; --bg2:#EEEBE4; --bg3:#E8E4DC;
+      --surface:rgba(0,0,0,0.04); --surface2:rgba(0,0,0,0.07);
+      --border:rgba(0,0,0,0.09);
+      --gold:#9A6F28; --gold2:#B8892E; --gold-dim:rgba(154,111,40,0.1);
+      --purple:#5A3F88; --purple2:#7B5EA7;
+      --text:#1A1814; --text2:rgba(26,24,20,0.62); --text3:rgba(26,24,20,0.38);
+      --shadow:0 8px 40px rgba(0,0,0,0.1);
+      --glow-gold:0 0 30px rgba(154,111,40,0.12);
+      --glow-purple:0 0 30px rgba(90,63,136,0.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none;transition:background var(--tr),color var(--tr)}
+    img{display:block;max-width:100%;object-fit:cover}
+    a{text-decoration:none;color:inherit}
+    button{cursor:pointer;border:none;background:none;font-family:inherit}
+    ul{list-style:none}
+
+    /* CURSOR */
+    #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    #cur-r{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;opacity:.65}
+    body.ch #cur{width:18px;height:18px}
+    body.ch #cur-r{width:52px;height:52px;border-color:var(--purple2)}
+
+    /* PROGRESS */
+    #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--purple2));z-index:9000;width:0;transition:width .1s}
+
+    /* LOADER */
+    #loader{position:fixed;inset:0;background:var(--bg);z-index:8000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;transition:opacity .5s,visibility .5s}
+    #loader.gone{opacity:0;visibility:hidden;pointer-events:none}
+    .ld-logo{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)}
+    .ld-bar{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
+    .ld-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--purple2));animation:ldFill 1.6s ease forwards}
+    @keyframes ldFill{to{width:100%}}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.75);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border);transition:background var(--tr)}
+    [data-theme="light"] nav{background:rgba(245,243,238,.82)}
+    .nl{display:flex;align-items:center;gap:0.65rem}
+    .ni{width:34px;height:34px;background:linear-gradient(135deg,var(--gold),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .nt{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;letter-spacing:.03em}
+    .nt span{color:var(--gold)}
+    .ns{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3)}
+    .nav-links{display:flex;align-items:center;gap:2rem}
+    .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);position:relative;transition:color .2s}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:100%;height:1px;background:var(--gold);transition:right .25s}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-links a:hover::after{right:0}
+    .nav-act{display:flex;align-items:center;gap:.8rem}
+    .tt{width:40px;height:21px;background:var(--surface2);border:1px solid var(--border);border-radius:11px;position:relative;transition:background .3s;cursor:pointer}
+    .tt::after{content:'';position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--gold);transition:transform .3s}
+    [data-theme="light"] .tt::after{transform:translateX(19px)}
+    .nc{padding:.48rem 1.2rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:8px;transition:transform .2s,box-shadow .2s}
+    .nc:hover{transform:translateY(-1px);box-shadow:var(--glow-gold)}
+    .hb{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer}
+    .hb span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+    .hb.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hb.open span:nth-child(2){opacity:0}
+    .hb.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mn{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.5rem 2rem;flex-direction:column;gap:1.1rem;z-index:499;opacity:0;transform:translateY(-8px);transition:opacity .3s,transform .3s}
+    .mn.open{display:flex;opacity:1;transform:translateY(0)}
+    .mn a{font-size:.9rem;font-weight:500;color:var(--text2);padding:.35rem 0}
+
+    /* HERO */
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:5rem 3rem 4rem}
+    .hero-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=80') center/cover no-repeat;filter:brightness(.28) saturate(1.2)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,15,.85) 0%,rgba(10,10,15,.4) 50%,rgba(123,94,167,.25) 100%)}
+    .hero-content{position:relative;z-index:2;text-align:center;max-width:860px}
+    .hbadge{display:inline-flex;align-items:center;gap:.5rem;padding:.38rem 1rem;background:var(--gold-dim);border:1px solid rgba(201,168,76,.35);border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.6rem;animation:fdDown .7s 1.8s both}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:700;line-height:1.06;margin-bottom:1.3rem;animation:fdDown .8s 2s both}
+    .hero h1 .g{display:block;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:.98rem;font-weight:300;color:rgba(240,238,232,.7);line-height:1.75;letter-spacing:.04em;margin-bottom:2.6rem;animation:fdDown .8s 2.2s both}
+    .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fdDown .8s 2.4s both}
+    .btn-g{padding:.82rem 1.9rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:10px;transition:transform .2s,box-shadow .2s}
+    .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.38)}
+    .btn-gl{padding:.82rem 1.9rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:10px;backdrop-filter:blur(10px);transition:transform .2s,border-color .2s,background .2s}
+    .btn-gl:hover{transform:translateY(-2px);border-color:var(--gold);background:var(--gold-dim)}
+    .btn-wa{padding:.82rem 1.9rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:10px;transition:transform .2s,box-shadow .2s}
+    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.32)}
+    .hero-stats{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;gap:3.5rem;animation:fdUp .8s 2.6s both}
+    .hstat{text-align:center}
+    .hstat-n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+    .hstat-l{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,238,232,.45);margin-top:.3rem}
+    .scroll-hint{position:absolute;bottom:1.2rem;right:2.5rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(240,238,232,.35);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;animation:fdIn 1s 3s both}
+    .sline{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sScroll 1.8s infinite}
+    @keyframes sScroll{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+    @keyframes fdDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fdUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fdIn{from{opacity:0}to{opacity:1}}
+
+    /* SHARED */
+    section{padding:5.5rem 3rem}
+    .inner{max-width:1200px;margin:0 auto}
+    .ey{font-size:.67rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;display:flex;align-items:center;gap:.6rem}
+    .ey::before{content:'';display:block;width:22px;height:1px;background:var(--gold)}
+    .st{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:700;line-height:1.1;margin-bottom:.9rem}
+    .st .grad{background:linear-gradient(90deg,var(--gold),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .ssub{font-size:.88rem;color:var(--text2);line-height:1.75;max-width:560px}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.vis{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+    .sec-center{text-align:center;max-width:600px;margin:0 auto}
+    .sec-center .ey{justify-content:center}
+    .sec-center .ssub{margin:0 auto}
+
+    /* ---- ABOUT ---- */
+    #about{background:var(--bg2)}
+    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .about-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .aig-item{border-radius:12px;overflow:hidden;position:relative}
+    .aig-item img{width:100%;height:220px;object-fit:cover;transition:transform .5s}
+    .aig-item:hover img{transform:scale(1.06)}
+    .aig-item.tall{grid-row:span 2}
+    .aig-item.tall img{height:100%}
+    .aig-overlay{position:absolute;bottom:0;left:0;right:0;padding:.8rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:600}
+    .about-feats{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
+    .af{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);transition:border-color .3s,background .3s}
+    .af:hover{border-color:rgba(201,168,76,.35);background:var(--gold-dim)}
+    .af-ico{width:36px;height:36px;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+    .af strong{font-size:.86rem;display:block;margin-bottom:.2rem}
+    .af span{font-size:.77rem;color:var(--text2);line-height:1.55}
+    .counters{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.8rem}
+    .ccard{text-align:center;padding:1.2rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r)}
+    .cnum{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+    .clbl{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.3rem}
+
+    /* ---- PRODUCTS ---- */
+    #products{background:var(--bg)}
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3.5rem}
+    .pcard{border-radius:var(--rl);overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform .35s,box-shadow .35s,border-color .35s;position:relative}
+    .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow),var(--glow-purple);border-color:rgba(123,94,167,.4)}
+    .pcard.feat{border-color:rgba(201,168,76,.3)}
+    .pcard.feat:hover{box-shadow:var(--shadow),var(--glow-gold);border-color:rgba(201,168,76,.55)}
+    .pbadge{position:absolute;top:1rem;right:1rem;padding:.28rem .7rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;z-index:2}
+    .pimg{width:100%;height:230px;position:relative;overflow:hidden}
+    .pimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .pcard:hover .pimg img{transform:scale(1.07)}
+    .pimg-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,15,.55),transparent)}
+    .pbody{padding:1.5rem}
+    .pname{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;margin-bottom:.45rem}
+    .pdesc{font-size:.8rem;color:var(--text2);line-height:1.65;margin-bottom:.9rem}
+    .psizes{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.2rem}
+    .stag{padding:.25rem .65rem;background:var(--gold-dim);border:1px solid rgba(201,168,76,.25);color:var(--gold2);font-size:.68rem;font-weight:600;letter-spacing:.06em;border-radius:6px}
+    .pbtn{width:100%;padding:.65rem;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:8px;transition:background .25s,border-color .25s,color .25s}
+    .pcard:hover .pbtn{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent;color:#0A0A0F}
+
+    /* ---- GALLERY ---- */
+    #gallery{background:var(--bg2)}
+    .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:10px;margin-top:3rem}
+    .gi{border-radius:12px;overflow:hidden;position:relative;cursor:pointer}
+    .gi:nth-child(1){grid-column:span 2;grid-row:span 2}
+    .gi:nth-child(5){grid-column:span 2}
+    .gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .gi:hover img{transform:scale(1.07)}
+    .gi-label{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.9);opacity:0;transition:opacity .3s;transform:translateY(4px);transition:opacity .3s,transform .3s}
+    .gi:hover .gi-label{opacity:1;transform:translateY(0)}
+    .gi-tag{display:inline-block;margin-top:.35rem;padding:.2rem .55rem;background:var(--gold);color:#0A0A0F;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:4px}
+
+    /* ---- SERVICES ---- */
+    #services{background:var(--bg)}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3.5rem}
+    .sc{padding:0;border-radius:var(--rl);overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform .3s,box-shadow .3s,border-color .3s;position:relative}
+    .sc:hover{transform:translateY(-5px);box-shadow:var(--shadow),var(--glow-gold);border-color:rgba(201,168,76,.3)}
+    .sc-img{height:180px;overflow:hidden}
+    .sc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .sc:hover .sc-img img{transform:scale(1.08)}
+    .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--purple2));transform:scaleX(0);transition:transform .3s;z-index:1}
+    .sc:hover::before{transform:scaleX(1)}
+    .sc-body{padding:1.4rem 1.5rem}
+    .sc-ico{font-size:1.4rem;margin-bottom:.7rem}
+    .sc-name{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;margin-bottom:.45rem}
+    .sc-desc{font-size:.78rem;color:var(--text2);line-height:1.6}
+
+    /* ---- BRAND STRIP ---- */
+    #brands{background:var(--bg3);padding:3rem}
+    .brand-strip{max-width:1100px;margin:0 auto}
+    .brand-row{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+    .brand-item{text-align:center;opacity:.5;transition:opacity .25s,transform .25s}
+    .brand-item:hover{opacity:1;transform:scale(1.05)}
+    .brand-icon{font-size:2rem;margin-bottom:.4rem}
+    .brand-name{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text2)}
+
+    /* ---- TESTIMONIALS ---- */
+    #testimonials{background:var(--bg2);overflow:hidden}
+    .track-wrap{overflow:hidden;margin-top:3rem;position:relative}
+    .track-wrap::before,.track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2}
+    .track-wrap::before{left:0;background:linear-gradient(to right,var(--bg2),transparent)}
+    .track-wrap::after{right:0;background:linear-gradient(to left,var(--bg2),transparent)}
+    .track{display:flex;gap:1.5rem;width:max-content;animation:scroll 32s linear infinite}
+    .track:hover{animation-play-state:paused}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+    .tc{width:310px;flex-shrink:0;padding:1.7rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);transition:border-color .3s,box-shadow .3s}
+    .tc:hover{border-color:rgba(201,168,76,.3);box-shadow:var(--glow-gold)}
+    .tc-q{font-family:'Cormorant Garamond',serif;font-size:2.8rem;line-height:.5;color:var(--gold);opacity:.4;margin-bottom:.7rem}
+    .tc-stars{color:var(--gold);font-size:.82rem;letter-spacing:2px;margin-bottom:.8rem}
+    .tc-text{font-size:.82rem;line-height:1.75;color:var(--text2);margin-bottom:1.2rem;font-style:italic}
+    .tc-name{font-weight:600;font-size:.84rem}
+    .tc-role{font-size:.7rem;color:var(--text3);margin-top:.15rem}
+
+    /* ---- CONTACT ---- */
+    #contact{background:var(--bg)}
+    .ctc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;margin-top:3.5rem;align-items:start}
+    .ctc-left{display:flex;flex-direction:column;gap:1.3rem}
+    .ctc-img{border-radius:var(--rl);overflow:hidden;height:220px}
+    .ctc-img img{width:100%;height:100%;object-fit:cover}
+    .cbl{padding:1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);transition:border-color .3s}
+    .cbl:hover{border-color:rgba(201,168,76,.3)}
+    .cbl-lbl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+    .cbl-val{font-size:.88rem;color:var(--text);line-height:1.65}
+    .cbl-val a{transition:color .2s}
+    .cbl-val a:hover{color:var(--gold)}
+    .plumbers{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+    .plcard{padding:1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:border-color .3s,transform .3s}
+    .plcard:hover{border-color:rgba(37,211,102,.4);transform:translateY(-2px)}
+    .pl-ico{font-size:1.7rem;margin-bottom:.45rem}
+    .pl-name{font-weight:600;font-size:.82rem;margin-bottom:.15rem}
+    .pl-role{font-size:.68rem;color:var(--text3);margin-bottom:.7rem}
+    .cbtn{display:block;width:100%;padding:.55rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:8px;transition:transform .2s,box-shadow .2s}
+    .cbtn:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(37,211,102,.35)}
+    .cmap{border-radius:var(--r);overflow:hidden;height:200px;border:1px solid var(--border)}
+    .cmap iframe{width:100%;height:100%;border:none;filter:saturate(.7)}
+    .ctc-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:2.4rem}
+    .cf-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;margin-bottom:.35rem}
+    .cf-sub{font-size:.78rem;color:var(--text2);margin-bottom:1.8rem}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem}
+    .fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+    .fg label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text2)}
+    .fg input,.fg textarea,.fg select{padding:.72rem .95rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:.86rem;transition:border-color .2s,box-shadow .2s;resize:none;-webkit-appearance:none;appearance:none}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
+    .fg textarea{height:105px}
+    .fsub{width:100%;padding:.88rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:10px;transition:transform .2s,box-shadow .2s}
+    .fsub:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
+
+    /* ---- BANK ---- */
+    #bank{background:var(--bg2)}
+    .bank-card{max-width:680px;margin:3rem auto 0;background:linear-gradient(135deg,rgba(201,168,76,.07),rgba(123,94,167,.07));border:1px solid rgba(201,168,76,.22);border-radius:var(--rl);padding:2.8rem;position:relative;overflow:hidden}
+    .bank-card::before{content:'';position:absolute;top:-40%;right:-15%;width:350px;height:350px;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);pointer-events:none}
+    .bank-card::after{content:'';position:absolute;bottom:-25%;left:-8%;width:280px;height:280px;background:radial-gradient(circle,rgba(123,94,167,.07),transparent 70%);pointer-events:none}
+    .bk-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.2rem}
+    .bk-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--gold)}
+    .bk-sec{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+    .bk-fields{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+    .bkf-lbl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+    .bkf-val{font-size:.92rem;font-weight:600;color:var(--text)}
+    .bkf-mono{font-size:1.05rem;font-family:'Space Grotesk',sans-serif;letter-spacing:.08em;color:var(--gold2)}
+    .bk-div{margin:1.5rem 0;height:1px;background:rgba(201,168,76,.12)}
+    .bk-copy{width:100%;padding:.82rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:transform .2s,box-shadow .2s}
+    .bk-copy:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
+
+    /* ---- FOOTER ---- */
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 3rem 2rem}
+    .fg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+    .ft{font-size:.8rem;color:var(--text2);line-height:1.7;margin-top:.7rem;max-width:255px}
+    .fsoc{display:flex;gap:.75rem;margin-top:1.3rem}
+    .fsoc a{width:36px;height:36px;background:var(--surface2);border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:background .2s,border-color .2s,transform .2s}
+    .fsoc a:hover{background:var(--gold-dim);border-color:rgba(201,168,76,.4);transform:translateY(-2px)}
+    .fct{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+    .flinks{display:flex;flex-direction:column;gap:.65rem}
+    .flinks a{font-size:.8rem;color:var(--text2);transition:color .2s}
+    .flinks a:hover{color:var(--gold)}
+    .nl-form{display:flex;gap:.45rem;margin-top:.9rem}
+    .nl-form input{flex:1;padding:.62rem .85rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.8rem;font-family:inherit}
+    .nl-form input:focus{outline:none;border-color:var(--gold)}
+    .nl-form button{padding:.62rem .95rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0A0F;font-size:.72rem;font-weight:700;border-radius:8px;transition:transform .2s}
+    .nl-form button:hover{transform:translateY(-1px)}
+    .fbot{max-width:1200px;margin:2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.73rem;color:var(--text3)}
+
+    /* FLOATING */
+    .fl-wa{position:fixed;bottom:6rem;right:1.5rem;width:50px;height:50px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 18px rgba(37,211,102,.4);z-index:400;transition:transform .2s;animation:fBounce 3s infinite}
+    .fl-call{position:fixed;bottom:1.5rem;right:1.5rem;width:50px;height:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 18px rgba(201,168,76,.4);z-index:400;transition:transform .2s}
+    .fl-wa:hover,.fl-call:hover{transform:scale(1.12)}
+    @keyframes fBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .ftip{position:absolute;right:60px;top:50%;transform:translateY(-50%);background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:.38rem .75rem;font-size:.68rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+    .fl-wa:hover .ftip,.fl-call:hover .ftip{opacity:1}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .about-wrap{grid-template-columns:1fr;gap:3rem}
+      .ctc-grid{grid-template-columns:1fr}
+      .fg-grid{grid-template-columns:1fr 1fr;gap:2rem}
+      .gal-grid{grid-template-columns:repeat(2,1fr)}
+      .gi:nth-child(1){grid-column:span 2;grid-row:span 1}
+      .gi:nth-child(5){grid-column:span 1}
+    }
+    @media(max-width:768px){
+      nav{padding:0 1.5rem}
+      .nav-links,.nc{display:none}
+      .hb{display:flex}
+      section{padding:4rem 1.5rem}
+      .hero{padding:5rem 1.5rem 4rem}
+      .hero-stats{gap:1.8rem}
+      .gal-grid{grid-template-columns:1fr 1fr}
+      .bk-fields{grid-template-columns:1fr}
+      .frow{grid-template-columns:1fr}
+      .fg-grid{grid-template-columns:1fr;gap:2rem}
+      .fbot{flex-direction:column;text-align:center}
+      .counters{grid-template-columns:1fr 1fr}
+      .plumbers{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .hero-btns{flex-direction:column;align-items:center}
+      .hero-stats{flex-direction:column;gap:1.2rem}
+      .scroll-hint{display:none}
+      .gal-grid{grid-template-columns:1fr}
+      .about-img-grid{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .track,.fl-wa,.sline{animation:none}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+<div id="prog"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-logo">✦ Ceramic Palace Decor</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nl">
+    <div class="ni">✦</div>
+    <div>
+      <div class="nt">Ceramic <span>Palace</span></div>
+      <div class="ns">Decor</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#bank">Payment</a></li>
+  </ul>
+  <div class="nav-act">
+    <button class="tt" id="tt" aria-label="Toggle theme"></button>
+    <a href="https://wa.me/917773982916" target="_blank" class="nc">WhatsApp</a>
+    <button class="hb" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mn" id="mn">
+  <a href="#about">About</a><a href="#products">Products</a>
+  <a href="#gallery">Gallery</a><a href="#services">Services</a>
+  <a href="#testimonials">Reviews</a><a href="#contact">Contact</a>
+  <a href="#bank">Bank Details</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hbadge">✦ Nagpur's Premier Tile & Sink Studio</span>
+    <h1>Premium Tiles &amp;<br><span class="g">Multifunctional Sink Solutions</span></h1>
+    <p class="hero-sub">Modern Design &nbsp;•&nbsp; Trusted Quality &nbsp;•&nbsp; Professional Service<br>First-to-launch Quartz Multifunctional Sinks in Nagpur</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-g">Contact Us</a>
+      <a href="#products" class="btn-gl">Explore Products</a>
+      <a href="https://wa.me/917773982916" target="_blank" class="btn-wa">💬 WhatsApp Now</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-n" data-count="5000">5000+</span><span class="hstat-l">Tile Designs</span></div>
+    <div class="hstat"><span class="hstat-n" data-count="15">15+</span><span class="hstat-l">Years Experience</span></div>
+    <div class="hstat"><span class="hstat-n" data-count="2000">2000+</span><span class="hstat-l">Projects Done</span></div>
+  </div>
+  <div class="scroll-hint"><div class="sline"></div>Scroll</div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="inner">
+    <div class="about-wrap">
+      <!-- Photo collage -->
+      <div class="about-img-grid reveal">
+        <div class="aig-item tall">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Luxury bathroom interior with premium tiles" loading="lazy" />
+          <div class="aig-overlay">Luxury Showroom</div>
+        </div>
+        <div class="aig-item">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Premium kitchen sink" loading="lazy" />
+          <div class="aig-overlay">Multifunctional Sinks</div>
+        </div>
+        <div class="aig-item">
+          <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&q=80" alt="Premium ceramic tiles" loading="lazy" />
+          <div class="aig-overlay">Ceramic Tiles</div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="reveal d1">
+        <p class="ey">Our Story</p>
+        <h2 class="st">Crafting Spaces With <span class="grad">Precision & Pride</span></h2>
+        <p class="ssub">Ceramic Palace Decor is Nagpur's most trusted destination for premium tiles, sanitaryware, and next-generation multifunctional sinks. We bring world-class materials and expert guidance — from design consultation to final installation.</p>
+        <ul class="about-feats">
+          <li class="af reveal d2">
+            <div class="af-ico">🏆</div>
+            <div><strong>First-Launch Innovation</strong><span>The only showroom in Nagpur stocking the new Quartz Multifunctional Sink — built for modern kitchens and premium spaces.</span></div>
+          </li>
+          <li class="af reveal d3">
+            <div class="af-ico">🎨</div>
+            <div><strong>Free Design Consultation</strong><span>Our experts help you choose the perfect tile, finish, and hardware for your space and budget.</span></div>
+          </li>
+          <li class="af reveal d4">
+            <div class="af-ico">🔧</div>
+            <div><strong>End-to-End Service</strong><span>From product selection to plumbing installation — every step handled by certified professionals.</span></div>
+          </li>
+        </ul>
+        <div class="counters reveal d5">
+          <div class="ccard"><span class="cnum" data-target="5000">0</span><span class="clbl">Tile Designs</span></div>
+          <div class="ccard"><span class="cnum" data-target="2000">0</span><span class="clbl">Happy Clients</span></div>
+          <div class="ccard"><span class="cnum" data-target="50">0</span><span class="clbl">Top Brands</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products">
+  <div class="inner">
+    <div class="sec-center reveal">
+      <p class="ey">Our Range</p>
+      <h2 class="st">Signature <span class="grad">Product Collections</span></h2>
+      <p class="ssub">Every product is selected for durability, aesthetics, and modern functionality.</p>
+    </div>
+    <div class="prod-grid">
+
+      <!-- Tile Insert Drain -->
+      <div class="pcard reveal d1">
+        <div class="pimg">
+          <img src="https://images.unsplash.com/photo-1620626011761-996317702519?w=700&q=80" alt="Tile insert drain installed in bathroom floor" loading="lazy" />
+          <div class="pimg-overlay"></div>
+        </div>
+        <div class="pbody">
+          <div class="pname">Tile Insert Drain</div>
+          <p class="pdesc">Seamlessly flush with floor tiles for an invisible drain solution. Ideal for premium bathrooms and wet areas demanding aesthetic purity and clean lines.</p>
+          <div class="psizes"><span class="stag">Standard Sizes Available</span></div>
+          <button class="pbtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now →</button>
+        </div>
+      </div>
+
+      <!-- Manual Multifunctional Sink -->
+      <div class="pcard reveal d2">
+        <div class="pimg">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80" alt="Manual multifunctional sink stainless steel" loading="lazy" />
+          <div class="pimg-overlay"></div>
+        </div>
+        <div class="pbody">
+          <div class="pname">Manual Multifunctional Sink</div>
+          <p class="pdesc">Versatile utility sink for kitchens and laundry areas. Robust construction, multiple compartments, and a practical design that never compromises on style.</p>
+          <div class="psizes"><span class="stag">30×18"</span><span class="stag">24×18"</span></div>
+          <button class="pbtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now →</button>
+        </div>
+      </div>
+
+      <!-- Quartz Multifunctional Sink -->
+      <div class="pcard feat reveal d3">
+        <span class="pbadge">⭐ First Launch</span>
+        <div class="pimg">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80" alt="Quartz multifunctional sink premium" loading="lazy" />
+          <div class="pimg-overlay"></div>
+        </div>
+        <div class="pbody">
+          <div class="pname">Quartz Multifunctional Sink</div>
+          <p class="pdesc">First-to-market in Nagpur. Premium quartz composite delivers superior heat resistance, scratch resistance, and a polished luxury finish that lasts decades.</p>
+          <div class="psizes"><span class="stag">24×18"</span></div>
+          <button class="pbtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now →</button>
+        </div>
+      </div>
+
+      <!-- Quartz Big Multifunctional Sink -->
+      <div class="pcard feat reveal d4">
+        <span class="pbadge">⭐ First Launch</span>
+        <div class="pimg">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Large quartz multifunctional sink kitchen" loading="lazy" />
+          <div class="pimg-overlay"></div>
+        </div>
+        <div class="pbody">
+          <div class="pname">Quartz Big Multifunctional Sink</div>
+          <p class="pdesc">The flagship of our sink collection. Extra-wide basin, quartz composite body, premium finish — designed for high-use kitchen environments and luxury residences.</p>
+          <div class="psizes"><span class="stag">30×20"</span></div>
+          <button class="pbtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="inner">
+    <div class="sec-center reveal">
+      <p class="ey">Our Work</p>
+      <h2 class="st">Showroom & <span class="grad">Project Gallery</span></h2>
+      <p class="ssub">From luxury bathroom tiles to premium sinks — explore our full range.</p>
+    </div>
+    <div class="gal-grid reveal">
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80" alt="Luxury bathroom with premium floor and wall tiles" loading="lazy" />
+        <div class="gi-label">Luxury Bathroom Tiles<span class="gi-tag">Floor & Wall</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&q=80" alt="Premium ceramic tile collection" loading="lazy" />
+        <div class="gi-label">Ceramic Tile Collection<span class="gi-tag">Showroom</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80" alt="Modern bathroom basin and fittings" loading="lazy" />
+        <div class="gi-label">Modern Basin<span class="gi-tag">Sanitaryware</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Stainless steel multifunctional kitchen sink" loading="lazy" />
+        <div class="gi-label">Multifunctional Sink<span class="gi-tag">Kitchen</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80" alt="Interior decor premium bathroom design" loading="lazy" />
+        <div class="gi-label">Premium Interior Design<span class="gi-tag">Decor</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317702519?w=600&q=80" alt="Tile insert drain modern bathroom" loading="lazy" />
+        <div class="gi-label">Tile Insert Drain<span class="gi-tag">Wet Area</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Bathroom accessories chrome fittings" loading="lazy" />
+        <div class="gi-label">Bathroom Accessories<span class="gi-tag">Chrome Fittings</span></div>
+      </div>
+
+      <div class="gi">
+        <img src="https://images.unsplash.com/photo-1604709177595-48f7cca8c8e5?w=600&q=80" alt="Bib cock tap faucet premium" loading="lazy" />
+        <div class="gi-label">Bib Cock & Taps<span class="gi-tag">Plumbing</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="inner">
+    <div class="sec-center reveal">
+      <p class="ey">What We Do</p>
+      <h2 class="st">Complete <span class="grad">Service Solutions</span></h2>
+      <p class="ssub">Beyond selling tiles and sinks — we support you from design to the last tile laid.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="sc reveal d1">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=600&q=80" alt="Professional plumber working" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🔧</div>
+          <div class="sc-name">Plumbing Services</div>
+          <p class="sc-desc">Certified plumbers for all sink, drain and bathroom installations. Precise, clean, and guaranteed workmanship.</p>
+        </div>
+      </div>
+
+      <div class="sc reveal d2">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Tile installation work" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🏗️</div>
+          <div class="sc-name">Tile Installation</div>
+          <p class="sc-desc">Professional installation of all tiles, sinks, and bathroom accessories by trained technicians.</p>
+        </div>
+      </div>
+
+      <div class="sc reveal d3">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Interior design consultation bathroom" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🎨</div>
+          <div class="sc-name">Interior Consultation</div>
+          <p class="sc-desc">Expert guidance on tile selection, color palettes, layouts, and material combinations for any space.</p>
+        </div>
+      </div>
+
+      <div class="sc reveal d4">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80" alt="Basin sanitaryware display" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🚿</div>
+          <div class="sc-name">Sanitaryware & Basins</div>
+          <p class="sc-desc">Complete range of basins, WC suites, and bathroom fixtures sourced from premium brands.</p>
+        </div>
+      </div>
+
+      <div class="sc reveal d1">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1604709177595-48f7cca8c8e5?w=600&q=80" alt="Bib cock plumbing fittings" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🚰</div>
+          <div class="sc-name">Bib Cocks & Faucets</div>
+          <p class="sc-desc">Wide selection of premium bib cocks, taps, and shower fittings in chrome, brushed nickel, and matte black.</p>
+        </div>
+      </div>
+
+      <div class="sc reveal d2">
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Bathroom accessories hooks towel rails" loading="lazy" />
+        </div>
+        <div class="sc-body">
+          <div class="sc-ico">🪞</div>
+          <div class="sc-name">Bathroom Accessories</div>
+          <p class="sc-desc">Towel rails, soap dispensers, hooks, mirrors, and complete bathroom accessory sets for a finished look.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRAND STRIP ===== -->
+<section id="brands" style="background:var(--bg3);padding:3.5rem 3rem">
+  <div class="brand-strip">
+    <div class="sec-center reveal" style="margin-bottom:0">
+      <p class="ey">Trusted Brands</p>
+      <h2 class="st" style="font-size:1.8rem">We Stock India's <span class="grad">Leading Brands</span></h2>
+    </div>
+    <div class="brand-row reveal d1">
+      <div class="brand-item"><div class="brand-icon">🏺</div><div class="brand-name">Kajaria</div></div>
+      <div class="brand-item"><div class="brand-icon">🏺</div><div class="brand-name">Johnson</div></div>
+      <div class="brand-item"><div class="brand-icon">🏺</div><div class="brand-name">Somany</div></div>
+      <div class="brand-item"><div class="brand-icon">🏺</div><div class="brand-name">Nitco</div></div>
+      <div class="brand-item"><div class="brand-icon">🚿</div><div class="brand-name">Jaquar</div></div>
+      <div class="brand-item"><div class="brand-icon">🚿</div><div class="brand-name">Cera</div></div>
+      <div class="brand-item"><div class="brand-icon">🚿</div><div class="brand-name">Hindware</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="inner">
+    <div class="sec-center reveal">
+      <p class="ey">Customer Stories</p>
+      <h2 class="st">What Our <span class="grad">Clients Say</span></h2>
+    </div>
+  </div>
+  <div class="track-wrap reveal" style="margin-top:3rem">
+    <div class="track" id="track"></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="inner">
+    <div class="reveal">
+      <p class="ey">Get In Touch</p>
+      <h2 class="st">Visit Our <span class="grad">Showroom</span></h2>
+      <p class="ssub">Come see our full collection in person, or reach out for a quick consultation.</p>
+    </div>
+    <div class="ctc-grid">
+      <div class="ctc-left reveal">
+        <div class="ctc-img">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Ceramic Palace Decor showroom Nagpur" loading="lazy" />
+        </div>
+        <div class="cbl">
+          <div class="cbl-lbl">Address</div>
+          <div class="cbl-val">5, Railway Crossing Road, Narendra Nagar Extension,<br>Manish Nagar, Somalwada, Nagpur – 440025</div>
+        </div>
+        <div class="cbl">
+          <div class="cbl-lbl">Showroom Hours</div>
+          <div class="cbl-val">Mon–Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 5:00 PM</div>
+        </div>
+        <div class="cbl">
+          <div class="cbl-lbl">Service Team — Call or WhatsApp</div>
+          <div class="plumbers">
+            <div class="plcard">
+              <div class="pl-ico">🔧</div>
+              <div class="pl-name">Deepak Naik</div>
+              <div class="pl-role">Plumber</div>
+              <a href="tel:+919850949725" class="cbtn">📞 +91 98509 49725</a>
+            </div>
+            <div class="plcard">
+              <div class="pl-ico">🔧</div>
+              <div class="pl-name">Kamlesh</div>
+              <div class="pl-role">Plumber – Ceramic Palace</div>
+              <a href="tel:+917773982916" class="cbtn">📞 +91 77739 82916</a>
+            </div>
+          </div>
+        </div>
+        <div class="cmap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.4!2d79.08!3d21.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf82281936d5%3A0x27f9a8674a361cba!2sCERAMIC%20PALACE!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="ctc-form reveal d1">
+        <div class="cf-title">Send an Enquiry</div>
+        <div class="cf-sub">We'll respond within a few hours on WhatsApp or call.</div>
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="Rajesh Sharma" /></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 98XXX XXXXX" /></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com" /></div>
+        <div class="fg">
+          <label>Interested In</label>
+          <select>
+            <option>Tile Insert Drain</option>
+            <option>Manual Multifunctional Sink (30×18")</option>
+            <option>Manual Multifunctional Sink (24×18")</option>
+            <option>Quartz Multifunctional Sink (24×18")</option>
+            <option>Quartz Big Multifunctional Sink (30×20")</option>
+            <option>Plumbing Service</option>
+            <option>Interior Consultation</option>
+            <option>Tiles</option>
+            <option>Basins & Sanitaryware</option>
+            <option>Bib Cocks & Faucets</option>
+            <option>Bathroom Accessories</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your project, size requirements, or any questions…"></textarea></div>
+        <button class="fsub" onclick="handleForm(event)">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BANK DETAILS ===== -->
+<section id="bank">
+  <div class="inner">
+    <div class="sec-center reveal">
+      <p class="ey">Secure Payment</p>
+      <h2 class="st">Bank <span class="grad">Transfer Details</span></h2>
+      <p class="ssub">Use the details below for direct bank transfers. Tap copy to instantly save all details.</p>
+    </div>
+    <div class="bank-card reveal">
+      <div class="bk-head">
+        <div class="bk-logo">✦ Ceramic Palace Decor</div>
+        <div class="bk-sec">🔒 Verified Account</div>
+      </div>
+      <div class="bk-fields">
+        <div><div class="bkf-lbl">Bank Name</div><div class="bkf-val">IndusInd Bank</div></div>
+        <div><div class="bkf-lbl">Account Name</div><div class="bkf-val">CERAMIC PALACE DECOR</div></div>
+        <div><div class="bkf-lbl">Account Number</div><div class="bkf-val bkf-mono">259370937706</div></div>
+        <div><div class="bkf-lbl">IFSC Code</div><div class="bkf-val bkf-mono">INDB0001828</div></div>
+        <div><div class="bkf-lbl">Account Type</div><div class="bkf-val">Current Account</div></div>
+        <div><div class="bkf-lbl">Branch</div><div class="bkf-val">Manish Nagar, Nagpur</div></div>
+      </div>
+      <div class="bk-div"></div>
+      <button class="bk-copy" id="bkCopy" onclick="copyBank()">📋 Copy All Bank Details</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="fg-grid">
+    <div>
+      <div class="nl" style="gap:.65rem;display:flex;align-items:center">
+        <div class="ni">✦</div>
+        <div><div class="nt">Ceramic <span>Palace</span></div><div class="ns">Decor</div></div>
+      </div>
+      <p class="ft">Nagpur's premier destination for premium tiles, multifunctional sinks, and interior decor. First-to-launch Quartz Sink range in Vidarbha.</p>
+      <div class="fsoc">
+        <a href="https://wa.me/917773982916" title="WhatsApp">💬</a>
+        <a href="#" title="Instagram">📷</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="https://maps.app.goo.gl/JG72Smyqpt9XZNSe6" target="_blank" title="Google Maps">📍</a>
+      </div>
+    </div>
+    <div>
+      <div class="fct">Quick Links</div>
+      <ul class="flinks">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fct">Products</div>
+      <ul class="flinks">
+        <li><a href="#products">Tile Insert Drain</a></li>
+        <li><a href="#products">Manual Sink</a></li>
+        <li><a href="#products">Quartz Sink 24×18"</a></li>
+        <li><a href="#products">Quartz Big 30×20"</a></li>
+        <li><a href="#services">Bib Cocks & Taps</a></li>
+        <li><a href="#services">Basins & Sanitary</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fct">Newsletter</div>
+      <p style="font-size:.78rem;color:var(--text2);line-height:1.6;margin-bottom:.4rem">Get notified about new arrivals and exclusive offers.</p>
+      <div class="nl-form"><input type="email" placeholder="your@email.com" /><button>Subscribe</button></div>
+      <div style="margin-top:1.4rem">
+        <div class="fct">Contact</div>
+        <p style="font-size:.78rem;color:var(--text2);line-height:2">
+          📍 Manish Nagar, Nagpur 440025<br>
+          📞 <a href="tel:+919850949725" style="color:var(--text2)">+91 98509 49725</a><br>
+          💬 <a href="tel:+917773982916" style="color:var(--text2)">+91 77739 82916</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Ceramic Palace Decor, Nagpur. All rights reserved.</span>
+    <span>Designed with ✦ for premium living</span>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917773982916?text=Hi%2C+I+want+to+enquire+about+your+products" target="_blank" class="fl-wa">
+  💬<span class="ftip">WhatsApp Us</span>
+</a>
+<a href="tel:+919850949725" class="fl-call">
+  📞<span class="ftip">Call Now</span>
+</a>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('gone'),1800));
+
+// THEME
+document.getElementById('tt').addEventListener('click',()=>{
+  const h=document.documentElement;
+  h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');
+});
+
+// HAMBURGER
+const hb=document.getElementById('hb'),mn=document.getElementById('mn');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mn.classList.toggle('open')});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mn.classList.remove('open')}));
+
+// CURSOR
+const cur=document.getElementById('cur'),curR=document.getElementById('cur-r');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function anim(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(anim)})();
+document.querySelectorAll('a,button,.pcard,.gi,.sc').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+});
+
+// SCROLL PROGRESS
+const prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>prog.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%');
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// COUNTERS
+function animCount(el,t){
+  let c=0,s=t/60;
+  const tm=setInterval(()=>{c=Math.min(c+s,t);el.textContent=Math.floor(c)+(t>=100?'+':'');if(c>=t)clearInterval(tm)},16);
+}
+const cobs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){animCount(e.target,+e.target.dataset.target);cobs.unobserve(e.target)}}),{threshold:.5});
+document.querySelectorAll('.cnum').forEach(el=>cobs.observe(el));
+
+// TESTIMONIALS
+const tdata=[
+  {name:'Priya Kulkarni',role:'Interior Designer, Nagpur',text:'The Quartz Multifunctional Sink is a game-changer. First time I\'ve seen it in Nagpur — my clients absolutely love the finish. Ceramic Palace Decor is now my go-to for every project.',stars:5},
+  {name:'Rajesh Sharma',role:'Homeowner, Dharampeth',text:'Renovated our entire home with tiles from here. The variety is extraordinary and the design consultation was genuinely helpful. Our bathroom looks like a luxury hotel now.',stars:5},
+  {name:'Amit Agrawal',role:'Hotel Owner, Civil Lines',text:'We fitted 32 hotel bathrooms using Ceramic Palace Decor products. On-time delivery, quality never failed once, and Kamlesh\'s installation team is superb.',stars:5},
+  {name:'Sneha Deshpande',role:'Architect, Nagpur',text:'Knowledgeable staff, premium brands, and prices that make sense. I recommend them to every client. The tile insert drain product is particularly unique in Nagpur.',stars:5},
+  {name:'Vikram Patil',role:'Builder, Manish Nagar',text:'Been working with Ceramic Palace for 3 years across 8 residential projects. Consistent quality, professional service, and the new quartz sink range is exactly what the market needed.',stars:5},
+  {name:'Meera Joshi',role:'Interior Decorator',text:'Finally a showroom in Nagpur that feels truly premium. The showroom itself is inspiring and the products live up to the presentation. Will not go anywhere else.',stars:5},
+];
+const tr=document.getElementById('track');
+[...tdata,...tdata].forEach(t=>{
+  const c=document.createElement('div');c.className='tc';
+  c.innerHTML=`<div class="tc-q">"</div><div class="tc-stars">${'★'.repeat(t.stars)}</div><p class="tc-text">${t.text}</p><div class="tc-name">${t.name}</div><div class="tc-role">${t.role}</div>`;
+  tr.appendChild(c);
+});
+
+// BANK COPY
+function copyBank(){
+  navigator.clipboard.writeText(`Ceramic Palace Decor — Bank Details\nBank: IndusInd Bank\nAccount Name: CERAMIC PALACE DECOR\nAccount No: 259370937706\nIFSC: INDB0001828\nType: Current\nBranch: Manish Nagar, Nagpur`).then(()=>{
+    const b=document.getElementById('bkCopy');const o=b.innerHTML;
+    b.innerHTML='✅ Copied to Clipboard!';setTimeout(()=>b.innerHTML=o,2600);
+  });
+}
+
+// FORM
+function handleForm(e){
+  e.preventDefault();const b=e.target;
+  b.textContent='✅ Enquiry Sent!';b.style.background='linear-gradient(135deg,#25D366,#128C7E)';
+  setTimeout(()=>{b.textContent='Send Enquiry →';b.style.background=''},3200);
+}
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+}));
+</script>
+</body>
+</html>
